@@ -1,0 +1,31 @@
+kind: pipeline
+name: eier_speck
+
+platform:
+  os: linux
+  arсh: amd64
+type: docker
+
+steps:
+  - name: build
+    volumes:
+      - name: docker
+        path: /var/run/docker.sock
+    image: plugins/docker
+    settings:
+      repo:
+        from_secret: DOCKER_REPO
+      username:
+        from_secret: DOCKER_USER
+      password:
+        from_secret: DOCKER_PASS
+      registry:
+        from_secret: DOCKER_REGISTRY
+    trigger:
+      branch:
+        - master
+
+volumes:
+  - name: docker
+    host:
+      path: /var/run/docker.sock
