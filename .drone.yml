@@ -7,6 +7,14 @@ platform:
 type: docker
 
 steps:
+  - name: prepare
+    image: alpine
+    environment:
+      USERS:
+        from_secret: USERS_JSON
+    commands:
+      - echo $USERS > users.json
+      - echo "Done"
   - name: build
     volumes:
       - name: docker

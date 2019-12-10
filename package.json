@@ -23,7 +23,6 @@
   },
   "homepage": "https://github.com/jkonze/eier-speck-notification#readme",
   "dependencies": {
-    "dotenv": "^8.2.0",
     "parcel-bundler": "^1.12.4",
     "rss-parser": "^3.7.3",
     "twilio": "^3.38.0"

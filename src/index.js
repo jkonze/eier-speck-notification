@@ -1,9 +1,7 @@
 import RSS from 'rss-parser'
-import dotenv from 'dotenv'
 import users from '../users.json'
 import twilio from 'twilio'
 
-const env = dotenv.config();
 const twilioClient = twilio(process.env.TWILIO_ASID, process.env.TWILIO_KEY);
 const parser = new RSS();
 
