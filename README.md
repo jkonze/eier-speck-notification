@@ -24,8 +24,16 @@ npm install
 
 ## Usage
 
+If you use this for the first time you have to run   
 ```sh
-npm run fetch
+npm run build
+```
+
+You have to set the env variables seen in `.env.example` (move it to `.env`) and configure users in `users.example.json` (move it to `users.json`)      
+
+You then can run   
+```sh
+npm run start
 ```
 
 ## Author
