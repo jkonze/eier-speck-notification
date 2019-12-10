@@ -5,13 +5,13 @@ import twilio from 'twilio'
 const twilioClient = twilio(process.env.TWILIO_ASID, process.env.TWILIO_KEY);
 const parser = new RSS();
 
-const searchStartDate = new Date("Mon, 10 Dec 2018 12:00:00 +0100").getTime();
+const searchStartDate = new Date("Tue, 10 Dec 2018 12:00:00 +0100").getTime();
 
 let checkInterval;
 
 function isRelevant(item) {
     let title = item.title.toLowerCase();
-    return (title.includes('Vorverkauf') || title.includes('Sale'))
+    return (title.includes('vorverkauf') || title.includes('sale'))
         && new Date(item.pubDate).getTime() > searchStartDate
 }
 
@@ -48,7 +48,7 @@ async function start() {
 
 
 start().then(() => {
-    console.log(`Done.\n Goodbye`);
+    console.log(`Watching...`);
 }).catch((e) => {
     console.log(e);
 });
