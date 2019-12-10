@@ -5,7 +5,7 @@ import twilio from 'twilio'
 const twilioClient = twilio(process.env.TWILIO_ASID, process.env.TWILIO_KEY);
 const parser = new RSS();
 
-const searchStartDate = new Date("Tue, 10 Dec 2018 12:00:00 +0100").getTime();
+const searchStartDate = new Date(process.env.SEARCH_START).getTime();
 
 let checkInterval;
 
